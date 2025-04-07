@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cardápio Ipê</title>
+</head>
+<body>
+  <header>
+    <h1>Ipê Cafeteria</h1>
+    <p>Horário: 07h30 às 15h30</p>
+    <div id="aviso-horario" class="aviso-fechado">
+      Estamos fora do horário de atendimento.
+    </div>
+  </header>
+
+  <nav class="categorias">
+    <button onclick="scrollPara('lanches')">Lanches</button>
+    <button onclick="scrollPara('bebidas')">Bebidas</button>
+    <button onclick="scrollPara('buffet')">Buffet</button>
+  </nav>
+
+  <!-- Lanches -->
+  <h2 id="lanches" style="text-align: center;">Lanches</h2>
+  <div class="cardapio-container">
+    <div class="item">
+      <img src="./images/download (2).jpeg" alt="Prato 1" />
+      <div class="item-info">
+        <h3>Croissant</h3>
+        <p>Descrição breve do prato 1.</p>
+        <p class="preco">R$ 8,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(1, -1)">−</button>
+          <span id="quantidade-1">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(1, 1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./images/download.jpeg" alt="Prato 2" />
+      <div class="item-info">
+        <h3>Pão de queijo</h3>
+        <p>Descrição breve do prato 2.</p>
+        <p class="preco">R$ 7,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(2, -1)">−</button>
+          <span id="quantidade-2">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(2, 1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./images/download batata.jpeg" alt="Prato 3" />
+      <div class="item-info">
+        <h3>Pão de Batata</h3>
+        <p>Descrição breve do prato 3.</p>
+        <p class="preco">R$ 8,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(3, -1)">−</button>
+          <span id="quantidade-3">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(3, 1)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bebidas -->
+  <h2 id="bebidas" style="text-align: center;">Bebidas</h2>
+  <div class="cardapio-container">
+    <div class="item">
+      <img src="./images/sucoslata.jpg" alt="Suco de Laranja">
+      <div class="item-info">
+        <h3>Sucos</h3>
+        <p>Suco lata 290ml.</p>
+        <p class="preco">R$ 8,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(4, -1)">−</button>
+          <span id="quantidade-4">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(4, 1)">+</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="item">
+      <img src="./images/cafexicara.jpg" alt="Café">
+      <div class="item-info">
+        <h3>Café</h3>
+        <p>Café Expresso.</p>
+        <p class="preco">R$ 8,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(5, -1)">−</button>
+          <span id="quantidade-5">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(5, 1)">+</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="item">
+      <img src="./images/refrigerante.jpg" alt="Refrigerante">
+      <div class="item-info">
+        <h3>Refrigerante</h3>
+        <p>Lata 350ml (Coca, Guaraná, etc).</p>
+        <p class="preco">R$ 8,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(6, -1)">−</button>
+          <span id="quantidade-6">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(6, 1)">+</button>
+        </div>
+      </div>
+    </div>
+
+  <!-- Buffet -->
+  <h2 id="buffet" style="text-align: center;">Buffet</h2>
+  <div class="cardapio-container">
+    <div class="item">
+      <img src="./images/buffet.jpg" alt="Prato feito">
+      <div class="item-info">
+        <h3>Buffet Completo</h3>
+        <p>Acompanha os seguintes itens: Café, Água e Refrigerante, etc...</p>
+        <p class="preco">R$ 300,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(7, -1)">−</button>
+          <span id="quantidade-7">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(7, 1)">+</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="item">
+      <img src="./images/repocafe.png" alt="Buffet por quilo">
+      <div class="item-info">
+        <h3>Reposição de Café</h3>
+        <p>Reposição de 20 cápsulas de café</p>
+        <p class="preco">R$70,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(8, -1)">−</button>
+          <span id="quantidade-8">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(8, 1)">+</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="item">
+      <img src="./images/repoagua.jpg" alt="Marmita">
+      <div class="item-info">
+        <h3>Reposiçao de Água</h3>
+        <p>Reposição de água "Garrafas de 510ml"</p>
+        <p class="preco">R$ 30,00</p>
+        <div class="quantidade-container">
+          <button class="btn-menos" onclick="alterarQuantidade(9, -1)">−</button>
+          <span id="quantidade-9">0</span>
+          <button class="btn-mais" onclick="alterarQuantidade(9, 1)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="payment-method">
+    <p>Escolha o método de pagamento:</p>
+    <div class="payment-buttons">
+      <button class="payment-btn" onclick="selecionarPagamento(this, 'Pix')">Pix</button>
+      <button class="payment-btn" onclick="selecionarPagamento(this, 'Dinheiro')">Dinheiro</button>
+      <button class="payment-btn" onclick="selecionarPagamento(this, 'Cartão')">Cartão</button>
+    </div>
+  </div>
+
+  <div class="cart">
+    <button class="whatsapp-btn" onclick="enviarMensagem()">Pedir pelo WhatsApp</button>
+  </div>
+      <script src="script.js"></script>
+</body>
+</html>

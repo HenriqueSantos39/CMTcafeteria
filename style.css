@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  position: relative;
+  background-image: url(./images/cafeteriaspace.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 0;
+}
+
+
+header h1, header p {
+  position: relative;
+  z-index: 1;
+  font-style: Poppins;
+}
+
+.aviso-fechado {
+  display: none;
+  color: #ff5555;
+  border: 1px solid #ff5555;
+  padding: 2px 8px;
+  margin: 4px auto 0; /* topo, lados auto, sem margem inferior */
+  border-radius: 8px;
+  background-color: transparent;
+  font-weight: 800;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-block;
+  max-width: fit-content;
+  white-space: nowrap;
+  animation: aparecer 0.8s ease forwards;
+}
+
+
+  
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.cardapio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fff4e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.categorias button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.categorias button:hover {
+  background-color: #6e452b;
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 300px;
+  max-width: 90vw;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.item-info {
+  padding: 15px;
+}
+
+.item-info h3 {
+  margin: 0 0 10px;
+}
+
+.preco {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.quantidade-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.btn-mais, .btn-menos {
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.payment-method {
+  text-align: center;
+  padding: 20px;
+}
+
+.payment-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.payment-btn {
+  padding: 10px 20px;
+  border: 2px solid #8b5e3c;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #8b5e3c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-btn:hover {
+  background-color: #8b5e3c;
+  color: white;
+}
+
+.payment-btn.selected {
+  background-color: #8b5e3c;
+  color: white;
+}
+
+.cart {
+  text-align: center;
+  padding: 20px;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebc5c;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .cardapio-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .item {
+    width: 100%;
+    max-width: 95vw;
+  }
+
+  .payment-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payment-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .whatsapp-btn {
+    width: 90%;
+    max-width: 300px;
+  }
+}
